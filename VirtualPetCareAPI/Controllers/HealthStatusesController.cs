@@ -17,7 +17,6 @@ namespace VirtualPetCareAPI.Controllers
             _context = context;
         }
 
-        // Belirli bir evcil hayvanın sağlık durumunu getirir
         [HttpGet("{petId}")]
         public async Task<ActionResult<HealthStatus>> GetHealthStatus(int petId)
         {
@@ -30,7 +29,6 @@ namespace VirtualPetCareAPI.Controllers
             return healthStatus;
         }
 
-        // Belirli bir evcil hayvanın sağlık durumunu günceller
         [HttpPatch("{petId}")]
         public async Task<IActionResult> UpdateHealthStatus(int petId, HealthStatus healthStatusUpdate)
         {
